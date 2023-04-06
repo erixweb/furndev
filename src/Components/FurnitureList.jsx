@@ -1,8 +1,7 @@
 export default function FurnitureList (props) {
     const { filter } = props 
 
-    console.log(filter)
-
+    let filterFurniture = ""
     const furniture = [
         {
             id: 1,
@@ -38,12 +37,12 @@ export default function FurnitureList (props) {
         },
     ]
     if (filter !== "") {
-        let filterFurniture = furniture.filter(r => r.desc.includes(filter))
+        filterFurniture = furniture.filter(r => r.desc.toLowerCase().includes(filter.toLowerCase()) || r.name.toLowerCase().includes(filter.toLowerCase()))
     }
 
     return (
         <section className="furniture-wrap">
-            {filter == "" ?
+            {filterFurniture == "" ?
                 furniture.map(item => (
                     <a id={item.id}>
                         <img src={item.image} alt={`Imagen del mueble ${item.name}`} />
@@ -59,7 +58,7 @@ export default function FurnitureList (props) {
                     </a>
                 ))
             :
-            furniture.filter(r => r.desc.includes(filter)).map(item => (
+            furniture.filter(r => r.desc.toLowerCase().includes(filter.toLowerCase()) || r.name.toLowerCase().includes(filter.toLowerCase())).map(item => (
                 <a id={item.id}>
                     <img src={item.image} alt={`Imagen del mueble ${item.name}`} />
                     <div className="content">
