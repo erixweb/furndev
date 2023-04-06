@@ -1,4 +1,7 @@
-export default function FurnitureList () {
+export default function FurnitureList (props) {
+    const { filter } = props 
+
+    console.log(filter)
 
     const furniture = [
         {
@@ -34,10 +37,13 @@ export default function FurnitureList () {
             medidas: "60cm * 60cm",
         },
     ]
+    if (filter !== "") {
+        let filterFurniture = furniture.filter(r => r.desc.includes(filter))
+    }
 
     return (
         <section className="furniture-wrap">
-            {
+            {filter == "" ?
                 furniture.map(item => (
                     <a id={item.id}>
                         <img src={item.image} alt={`Imagen del mueble ${item.name}`} />
@@ -52,6 +58,21 @@ export default function FurnitureList () {
                         </div>
                     </a>
                 ))
+            :
+            furniture.filter(r => r.desc.includes(filter)).map(item => (
+                <a id={item.id}>
+                    <img src={item.image} alt={`Imagen del mueble ${item.name}`} />
+                    <div className="content">
+                        <h2>{item.name}</h2>
+                        <small>
+                            {item.price}
+                        </small>
+                        <p>
+                            {item.desc}
+                        </p>
+                    </div>
+                </a>
+            ))
             }
         </section>
     )

@@ -1,5 +1,5 @@
-import FurnitureList from "./Components/FurnitureList"
 import Header from "./Components/Header"
+import Search from "./Components/Search"
 
 function App() {
 
@@ -7,7 +7,7 @@ function App() {
     <>
       <Header />
       <main>
-        <FurnitureList />
+        <Search />
       </main>
     </>
   )
