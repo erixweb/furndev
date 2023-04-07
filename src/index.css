@@ -55,6 +55,7 @@ main {
   width: 100%;
   max-width: 1344px;
   padding: 10px;
+  padding-bottom: 40px;
 
   display: flex;
   flex-direction: row;

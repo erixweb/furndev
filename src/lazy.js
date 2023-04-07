@@ -7,6 +7,7 @@ window.addEventListener("load", () => {
             entries.forEach(entry => {
                 if (entry.isIntersecting && entry.target.nodeName.toLocaleLowerCase() === "img") {
                     const img = entry.target
+                    console.log(img)
                     img.setAttribute("src", img.getAttribute("data-src"))
                     img.classList.add("fade")
                     observer.disconnect()
@@ -15,6 +16,8 @@ window.addEventListener("load", () => {
         })
         io.observe(target)
     }
-    
+    document.querySelector(".furniture-wrap").addEventListener("change", () => {
+        console.log("z")
+    })
     elements.forEach(Lazy)
 })
