@@ -97,6 +97,7 @@ main {
   margin-top: 10px;
 }
 .furniture-wrap button {
+  background-color: transparent;
   cursor: pointer;
   margin-top: 10px;
   border: 0px;
