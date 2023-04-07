@@ -19,14 +19,16 @@ body {
 */
 header {
   background: url("https://www.gilmar.es/wp-content/uploads/2022/12/Salon-dos-ambientes.jpg") no-repeat;
-  background-size: 100% 100%;
+  background-position: center center;
+  background-size: cover;
   color: #fff;
 
   display: flex;
   flex-direction: column;
   place-items: center;
   width: 100%;
-  min-height: 80vh;
+  min-height: 70vh;
+  max-height: 1200px;
   position: relative;
 }
 header div {
@@ -40,9 +42,10 @@ header div {
   display: flex;
   flex-direction: column;
   place-items: center;
-  border-radius: 7px;
+  border-radius: 20px;
   color: #fff;
   background-color: #284ccd;
+  box-shadow: 0px 2px 32px rgba(0, 0, 0, 0.501);
 }
 /*
   Main
@@ -50,8 +53,8 @@ header div {
 main {
   margin-top: 100px;
   width: 100%;
-  max-width: 1000px;
-  padding-bottom: 40px;
+  max-width: 1344px;
+  padding: 10px;
 
   display: flex;
   flex-direction: row;
@@ -68,13 +71,13 @@ main {
   flex-wrap: wrap;
   gap: 20px;
 }
-.furniture-wrap a {
+.furniture-wrap article {
   background-color: #f3f3f3;
   width: 300px;
   text-align: center;
   border-radius: 7px;
 }
-.furniture-wrap a img {
+.furniture-wrap article img {
   border-top-left-radius: 7px;
   border-top-right-radius: 7px;
 
@@ -82,16 +85,27 @@ main {
   width: 100%;
   height: 200px;
 }
-.furniture-wrap a .content {
+.furniture-wrap .content {
   text-align: start;
   padding: 16px;
 }
-.furniture-wrap a .content small {
+.furniture-wrap.content small {
   font-size: 16px;
   color: rgb(83, 138, 0);
 }
 .furniture-wrap p {
   margin-top: 10px;
+}
+.furniture-wrap button {
+  cursor: pointer;
+  margin-top: 10px;
+  border: 0px;
+  border-right: 1px solid gray;
+}
+.furniture-wrap svg {
+  vertical-align: middle;
+  width: 28px;
+  height: 28px;
 }
 /*
   Search
@@ -106,11 +120,11 @@ form {
 form input {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-size: 16px;
-  color: #fff;
-  border: 2px solid white;
+  color: #000;
   border-radius: 7px;
   outline: none;
-  background-color: #284ccd;
+  border: none;
+  background-color: #fff;
   padding: 16px;
   width: 100%;
 }
