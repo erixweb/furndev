@@ -3,7 +3,7 @@ export default function Header () {
         <header>
             <div>
                 <h1>
-                    Furnidev
+                    Furniture
                 </h1>
                 <p>
                     Applicaciones estática de muebles.
