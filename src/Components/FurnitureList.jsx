@@ -14,11 +14,11 @@ export default function FurnitureList(props) {
     }
 
     return (
-        <section className="furniture-wrap">
+        <section className="furniture-wrap" id="2342423">
             {filterFurniture == "" ?
                 furniture.map(item => (
-                    <article id={item.id}>
-                        <img src={item.image} alt={`Imagen del mueble ${item.name}`} />
+                    <article id={item.id+Math.random()}>
+                        <img data-src={item.image} alt={`Imagen del mueble ${item.name}`} />
                         <div className="content">
                             <h2>{item.name}</h2>
                             <small>
@@ -36,8 +36,8 @@ export default function FurnitureList(props) {
                 ))
                 :
                 furniture.filter(r => r.desc.toLowerCase().includes(filter.toLowerCase()) || r.name.toLowerCase().includes(filter.toLowerCase())).map(item => (
-                    <article id={item.id}>
-                        <img src={item.image} alt={`Imagen del mueble ${item.name}`} />
+                    <article id={item.id+Math.random()}>
+                        <img data-src={item.image} alt={`Imagen del mueble ${item.name}`} />
                         <div className="content">
                             <h2>{item.name}</h2>
                             <small>

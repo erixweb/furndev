@@ -13,7 +13,7 @@ export default function Search () {
             <form>
                 <input type="text" onChange={changeInput} value={input} />
             </form>
-            <FurnitureList filter={input}/>
+            <FurnitureList filter={input} />
         </>
     )
 }
